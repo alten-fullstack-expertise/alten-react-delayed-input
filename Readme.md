@@ -26,3 +26,8 @@ function App() {
 
 export default App;
 ```
+
+## Props
+
+All props that can be passed to a regular ``<input />`` component can also be passed to this component.
+The component has auto complete for all available props.
