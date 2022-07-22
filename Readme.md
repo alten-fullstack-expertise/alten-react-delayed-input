@@ -1,24 +1,28 @@
-# Boilerplate for creating React npm packages with Typescript
+# Alten react delayed input
 
-This is a boilerplate project that can be used to create npm packages with Typescript.
+This component provides a simple, unstyled input component that can be used like any other.
+The only difference is that a delay can be specified for triggering the ``onChange`` function.
 
-It supports a minimum react version from 16.8 onwards.
+## Examples
 
-Run the following commands to start developing + testing.
+In this example we are adding a DelayedInput. The onChange function is triggered after 1000ms (1 second).
+Please note that the ``newValue`` in the onChange function is a string.
 
-1. Installation: `npm run setup`
-2. Development: `npm run ts-dev` to build and watch for Typescript changes
-3. In a new terminal window run `npm run react-dev` to start the react demo project.
+```tsx
+function App() {
 
-Changes to you `src/index.tsx` should be immediately visible in your example react demo application.
+  const [value, setValue] = useState<string>("Test");
 
-### Publish
+  return (
+    <div>
+        <DelayedInput 
+            value={value}
+            onChange={(newValue: string) => setValue(newValue)}
+            delay={1000} 
+        />
+    </div>
+  );
+}
 
-To publish your new react package, follow the steps below.
-
-1. In the project root run `npm run build`. This creates a build for both server side and client side projects.
-2. In the project root, change the following data in the `package.json`: name, version, description. Make sure the name field is unique. No other NPM package can have that name.
-3. If you are not logged in to npm, run the command ``npm login`` and enter your NPM credentials. If you have none, create an npm account on https://www.npmjs.com/
-4. Finally, run `npm publish`
-
-Congrats, your package has been published!
+export default App;
+```
