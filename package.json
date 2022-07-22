@@ -1,6 +1,6 @@
 {
   "name": "alten-react-delayed-input",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A input element for react that triggers the onChange prop after a specified delay.",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
